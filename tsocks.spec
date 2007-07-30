@@ -6,7 +6,7 @@
 
 Name:           tsocks
 Version:        1.8
-Release:        %mkrel 0.%{beta}.3
+Release:        %mkrel 0.%{beta}.4
 Summary:        A transparent SOCKS proxying library
 License:        GPL
 Group:          Networking/Other
@@ -34,14 +34,14 @@ Library for %{name}.
 
 %build
 %{configure2_5x}
-%{__sed} -i -e 's|^LIBS =.*-lc$|LIBS =|' Makefile
+%{__perl} -pi -e 's|-lc||g' Makefile
 
 %{make}
 
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
-%{__sed} -i -e 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_bindir}/tsocks
+%{__perl} -pi -e 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_bindir}/tsocks
 
 %clean
 %{__rm} -rf %{buildroot}
