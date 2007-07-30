@@ -34,12 +34,14 @@ Library for %{name}.
 
 %build
 %{configure2_5x}
+%{__sed} -i -e 's|^LIBS =.*-lc$|LIBS =|' Makefile
+
 %{make}
-%{__sed} -i -e 's|/usr/lib|%{_libdir}|g' tsocks
 
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
+%{__sed} -i -e 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_bindir}/tsocks
 
 %clean
 %{__rm} -rf %{buildroot}
