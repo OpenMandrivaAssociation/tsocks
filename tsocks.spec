@@ -12,6 +12,7 @@ License:        GPL
 Group:          Networking/Other
 URL:            http://tsocks.sourceforge.net/
 Source0:        http://ftp1.sourceforge.net/tsocks/%{name}-%{version}%{beta}.tar.bz2
+Patch0:         %{name}-1.8-connect.patch
 Requires:       %{libname} = %{version}-%{release}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -31,11 +32,11 @@ Library for %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
+%{__autoconf}
 
 %build
 %{configure2_5x}
-%{__perl} -pi -e 's|-lc||g' Makefile
-
 %{make}
 
 %install
