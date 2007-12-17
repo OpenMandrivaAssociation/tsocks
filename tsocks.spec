@@ -13,7 +13,6 @@ Group:          Networking/Other
 URL:            http://tsocks.sourceforge.net/
 Source0:        http://ftp1.sourceforge.net/tsocks/%{name}-%{version}%{beta}.tar.bz2
 Requires:       %{libname} = %{version}-%{release}
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 tsocks' role is to allow these non SOCKS aware applications (e.g
