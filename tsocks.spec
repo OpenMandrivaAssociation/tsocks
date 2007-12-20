@@ -6,7 +6,7 @@
 
 Name:           tsocks
 Version:        1.8
-Release:        %mkrel 0.%{beta}.4
+Release:        %mkrel 0.%{beta}.5
 Summary:        A transparent SOCKS proxying library
 License:        GPL
 Group:          Networking/Other
