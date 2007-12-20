@@ -34,7 +34,6 @@ Library for %{name}.
 
 %build
 %{configure2_5x}
-%{__perl} -pi -e 's/\-lc//g' Makefile
 %{make}
 
 %install
