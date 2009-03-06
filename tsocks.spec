@@ -12,7 +12,7 @@ License:        GPL
 Group:          Networking/Other
 URL:            http://tsocks.sourceforge.net/
 Source0:        http://ftp1.sourceforge.net/tsocks/%{name}-%{version}%{beta}.tar.bz2
-BuildRequires:  glibc-devel
+BuildRequires:  glibc-static-devel
 Requires:       %{libname} = %{version}-%{release}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
