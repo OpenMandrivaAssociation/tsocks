@@ -63,3 +63,44 @@ Library for %{name}.
 %files -n %{libname}
 %defattr(0644,root,root,0755)
 %attr(0755,root,root) %{_libdir}/*.so*
+
+
+%changelog
+* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.8-0.beta5.7mdv2010.0
++ Revision: 445563
+- rebuild
+
+* Fri Mar 06 2009 Michael Scherer <misc@mandriva.org> 1.8-0.beta5.6mdv2009.1
++ Revision: 349607
+- fix buildRequires
+- rebuild
+- rebuild
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - rebuild
+    - kill stupid perl -pi -e "s/\-lc//g" Makefile
+    - BR glibc-devel
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + David Walluck <walluck@mandriva.org>
+    - fix build
+    - patch to disable -lc
+    - fix build
+    - sed the installed tsocks
+    - remove -lc from Makefile
+    - spec cleanup
+
+
+* Sat Mar 11 2006 Pascal Terjan <pterjan@mandriva.com> 1.8-0.beta5.2mdk
+- Fix running with lib64
+- mkrel
+
+* Mon Apr 11 2005 Olivier Blin <oblin@mandrakesoft.com> 1.8-0.beta5.1mdk
+- initial Mandrakelinux release
+
