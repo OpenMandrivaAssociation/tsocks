@@ -14,7 +14,6 @@ URL:            http://tsocks.sourceforge.net/
 Source0:        http://ftp1.sourceforge.net/tsocks/%{name}-%{version}%{beta}.tar.bz2
 BuildRequires:  glibc-static-devel
 Requires:       %{libname} = %{version}-%{release}
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 tsocks' role is to allow these non SOCKS aware applications (e.g
@@ -42,16 +41,6 @@ Library for %{name}.
 %{makeinstall_std}
 %{__perl} -pi -e 's|/usr/lib|%{_libdir}|g' %{buildroot}%{_bindir}/tsocks
 
-%clean
-%{__rm} -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %files
 %defattr(0644,root,root,0755)
