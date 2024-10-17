@@ -10,7 +10,7 @@ Release:        0.%{beta}.8
 Summary:        A transparent SOCKS proxying library
 License:        GPL
 Group:          Networking/Other
-URL:            http://tsocks.sourceforge.net/
+URL:            https://tsocks.sourceforge.net/
 Source0:        http://ftp1.sourceforge.net/tsocks/%{name}-%{version}%{beta}.tar.bz2
 BuildRequires:  glibc-static-devel
 Requires:       %{libname} = %{version}-%{release}
